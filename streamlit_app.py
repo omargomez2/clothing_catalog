@@ -25,6 +25,8 @@ streamlit.title("Clothing Catalog")
 my_cur.execute("select '"'COLOR_OR_STYLE'"' from catalog_for_website")
 my_catalog = my_cur.fetchall()
 
+streamlit.write(my_catalog)
+
 # put the dafta into a dataframe
 df = pandas.DataFrame(my_catalog)
 
