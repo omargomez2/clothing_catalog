@@ -22,7 +22,7 @@ my_cur = conn.cursor()
 streamlit.title("Clothing Catalog")
 
 # run a snowflake query and put it all in a var called my_catalog
-my_cur.execute("select '"'COLOR_OR_STYLE'"' from catalog_for_website")
+my_cur.execute('select "COLOR_OR_STYLE" from catalog_for_website')
 my_catalog = my_cur.fetchall()
 
 streamlit.write(my_catalog)
