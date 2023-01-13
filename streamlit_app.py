@@ -28,13 +28,10 @@ my_catalog = my_cur.fetchall()
 # put the data into a dataframe
 df = pandas.DataFrame(my_catalog)
 
-streamlit.write(df)
-#streamlit.write(df[1].values.tolist())
-
 # temp write the dataframe to the page so I Can see what I am working with
 # streamlit.write(df)
 # put the color_or_style column into a list
-color_list = df[1].values.tolist()
+color_list = df[0].values.tolist()
 
 # print(color_list)
 # Let's put a pick list here so they can pick the color
