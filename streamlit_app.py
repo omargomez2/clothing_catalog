@@ -6,6 +6,7 @@
 
 import streamlit
 import snowflake.connector
+import psycopg2
 import pandas
 
 # connect to snowflake
@@ -14,7 +15,7 @@ my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 
 # connect to postgresql
 def init_connection():
-    return psycopg2.connect(**st.secrets["postgres"])
+    return psycopg2.connect(**streamlit.secrets["postgres"])
 conn = init_connection()
 my_cur = conn.cursor()
 
@@ -29,8 +30,8 @@ df = pandas.DataFrame(my_catalog)
 
 # temp write the dataframe to the page so I Can see what I am working with
 # streamlit.write(df)
-# put the first column into a list
-color_list = df[0].values.tolist()
+# put the color_or_style column into a list
+color_list = df[1].values.tolist()
 
 # print(color_list)
 # Let's put a pick list here so they can pick the color
