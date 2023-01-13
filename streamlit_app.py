@@ -10,7 +10,13 @@ import pandas
 
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
+#my_cur = my_cnx.cursor()
+
+# connect to postgresql
+def init_connection():
+    return psycopg2.connect(**st.secrets["postgres"])
+conn = init_connection()
+my_cur = conn.cursor()
 
 streamlit.title("Clothing Catalog")
 
@@ -40,3 +46,5 @@ streamlit.image(df2[0], width=400, caption= product_caption)
 streamlit.write('Price: ', df2[1])
 streamlit.write('Sizes Available: ',df2[2])
 streamlit.write(df2[3])
+
+conn.close()
