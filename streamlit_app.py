@@ -1,6 +1,7 @@
 #--------------------
 # Clothing Catalog streamlit app
 # Author: OG
+# Description: Code adapted from the ESS-DLKW Snowflake workshop
 # url: https://omargomez2-clothing-catalog-streamlit-app-bhyzo8.streamlit.app/
 #-----------
 
